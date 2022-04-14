@@ -3,6 +3,9 @@
   "type": "module",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/Re-Dnor/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/Re-Dnor/frontend-project-lvl2/actions)",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +22,12 @@
   "homepage": "https://github.com/Re-Dnor/frontend-project-lvl2#readme",
   "dependencies": {
     "commander": "^9.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.4",
+    "jest": "^27.5.1"
   }
 }
