@@ -4,13 +4,13 @@ import { Command } from 'commander';
 const program = new Command();
 
 program
-  .description(' Compares two configuration files and shows a difference.')
-  .version('0.0.1');
-
-program.command('split')
-  .description('Split a string into substrings and display as an array')
-  .argument('<string>', 'string to split')
-  .option('--first', 'display just the first substring')
-  .option('-s, --separator <char>', 'separator character', ',')
+  .name('gendiff')
+  .version('0.0.2')
+  .description('Compares two configuration files and shows a difference.')
+  .arguments('<filepath1> <filepath2>')
+  .option('-f, --format <type>', 'output format')
+  .action((filepath1, filepath2) => {
+    console.log(filepath1, filepath2);
+  });
 
 program.parse();
