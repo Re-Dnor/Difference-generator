@@ -1,10 +1,9 @@
 import _ from 'lodash';
 import dataFile from './data.js';
 
-export default function genDiff(filepath1, filepath2) {
+function genDiff(filepath1, filepath2) {
   const file1 = dataFile(filepath1);
   const file2 = dataFile(filepath2);
-
 
   const allKeys = Object.keys({ ...file1, ...file2 });
   const sortedKeys = allKeys.sort();
@@ -24,3 +23,5 @@ export default function genDiff(filepath1, filepath2) {
   const result = ['{', ...getDifferences, '}'].join('\n');
   return result;
 }
+
+export default genDiff;
