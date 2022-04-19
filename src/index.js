@@ -7,16 +7,16 @@ export default function genDiff(filepath1, filepath2) {
 
   const allKeys = Object.keys({ ...file1, ...file2 }).sort();
   const getDifferences = allKeys.map((key) => {
-    if (!_.has(file2, key)) {                //not found key in file2
+    if (!_.has(file2, key)) { // not found key in file2
       return `- ${key}: ${file1[key]}`;
     }
-    if (!_.has(file1, key)) {                //not found key in file1
+    if (!_.has(file1, key)) { // not found key in file1
       return `+ ${key}: ${file2[key]}`;
     }
-    if (file1[key] === file2[key]) {         //same values
+    if (file1[key] === file2[key]) { // same values
       return `  ${key}: ${file1[key]}`;
     }
-    return `- ${key}: ${file1[key]}\n+ ${key}: ${file2[key]}`; //different values
+    return `- ${key}: ${file1[key]}\n+ ${key}: ${file2[key]}`; // different values
   });
 
   const result = ['{', ...getDifferences, '}'].join('\n');
