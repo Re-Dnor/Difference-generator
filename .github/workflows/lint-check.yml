@@ -1,5 +1,4 @@
-# workflow name
-name: Node CI
+name: Github Actions
 
 on:
   - push
