@@ -1,6 +1,6 @@
+import yaml from 'js-yaml';
 import parse from '../src/parsers.js';
 import dataProcessing from '../src/data.js';
-import yaml from 'js-yaml';
 
 test('Show format file', () => {
   const filepath1 = './__fixtures__/file1.json';
