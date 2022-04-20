@@ -1,9 +1,13 @@
 import _ from 'lodash';
-import dataFile from './data.js';
+import parse from './parsers.js';
 
 function genDiff(filepath1, filepath2) {
-  const file1 = dataFile(filepath1);
-  const file2 = dataFile(filepath2);
+  const file1 = parse(filepath1);
+  const file2 = parse(filepath2);
+
+  if (file1 === 'Error' || file2 === 'Error') {
+    return 'Error: data format is not supported! Please use json, yml or yaml format.';
+  }
 
   const allKeys = Object.keys({ ...file1, ...file2 });
   const sortedKeys = allKeys.sort();
