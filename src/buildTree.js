@@ -1,4 +1,4 @@
-import _ from "lodash";
+import _ from 'lodash';
 
 export default function buildTree(file1, file2) {
   const allKeys = Object.keys({ ...file1, ...file2 });
@@ -9,7 +9,7 @@ export default function buildTree(file1, file2) {
       return {
         type: 'nested',
         key,
-        children: buildTree(file1[key], file2[key])
+        children: buildTree(file1[key], file2[key]),
       };
     }
 
@@ -18,7 +18,7 @@ export default function buildTree(file1, file2) {
         type: 'deleted',
         key,
         value: file1[key],
-      }
+      };
     }
 
     if (!_.has(file1, key)) {
@@ -26,7 +26,7 @@ export default function buildTree(file1, file2) {
         type: 'added',
         key,
         value: file2[key],
-      }
+      };
     }
 
     if (file1[key] !== file2[key]) {
@@ -35,7 +35,7 @@ export default function buildTree(file1, file2) {
         key,
         value1: file1[key],
         value2: file2[key],
-      }
+      };
     }
 
     if (file1[key] === file2[key]) {
@@ -43,11 +43,11 @@ export default function buildTree(file1, file2) {
         type: 'unchanged',
         key,
         value: file1[key],
-      }
+      };
     }
 
     return null;
-  }
+  };
 
-  return sortedKeys.map(getDiff)
+  return sortedKeys.map(getDiff);
 }

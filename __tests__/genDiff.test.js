@@ -1,8 +1,6 @@
-import parse from '../src/parsers.js';
-import genDiff from '../src/genDIff.js'
-import resultFlat from '../__fixtures__/resultFlat.js'
-import resultDeep from '../__fixtures__/resultDeep.js'
-
+import genDiff from '../src/genDIff.js';
+import resultFlat from '../__fixtures__/resultFlat.js';
+import resultDeep from '../__fixtures__/resultDeep.js';
 
 test('Shows difference between files', () => {
   const filepath1 = './__fixtures__/file1.json';
@@ -13,6 +11,7 @@ test('Shows difference between files', () => {
   const filepath6 = './__fixtures__/file6.json';
 
   expect(genDiff(filepath1, filepath2, 'stylish')).toEqual(resultFlat);
+  expect(genDiff(filepath3, filepath4, 'stylish')).toEqual(resultFlat);
   expect(genDiff(filepath5, filepath6, 'stylish')).toEqual(resultDeep);
 });
 

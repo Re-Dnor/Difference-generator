@@ -3,7 +3,7 @@ import path from 'path';
 import process from 'process';
 import yaml from 'js-yaml';
 
-const readFile = (filepath) => fs.readFileSync(path.resolve(process.cwd(), filepath), 'utf-8')
+const readFile = (filepath) => fs.readFileSync(path.resolve(process.cwd(), filepath), 'utf-8');
 
 const parse = (filepath) => {
   const extension = path.extname(filepath);

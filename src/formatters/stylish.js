@@ -33,11 +33,11 @@ export default function stylish(tree) {
       if (type === 'unchanged') {
         return `${indent(depth)}  ${key}: ${stringify(node.value, depth)}`;
       }
-    }
+    };
 
     const strings = currentValue.map(buildDiffString);
     return ['{', ...strings, `${indent(depth)}}`].join('\n');
-  }
+  };
 
   return iter(tree, 1);
 }
