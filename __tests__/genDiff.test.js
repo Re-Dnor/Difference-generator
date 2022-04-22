@@ -1,4 +1,4 @@
-import genDiff from '../src/genDIff.js';
+import genDiff from '../src/index.js';
 import resultFlat from '../__fixtures__/resultFlat.js';
 import resultDeep from '../__fixtures__/resultDeep.js';
 import resultDeepPlain from '../__fixtures__/resultDeepPlain.js';
