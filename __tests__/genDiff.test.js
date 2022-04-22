@@ -3,6 +3,7 @@ import resultFlat from '../__fixtures__/resultFlat.js';
 import resultDeep from '../__fixtures__/resultDeep.js';
 import resultDeepPlain from '../__fixtures__/resultDeepPlain.js';
 import resultFlatPlain from '../__fixtures__/resultFlatPlain.js';
+import resultJson from '../__fixtures__/resultJson.js';
 
 const filepath1 = './__fixtures__/file1.json';
 const filepath2 = './__fixtures__/file2.json';
@@ -26,6 +27,11 @@ test('Shows difference between files "--format plain"', () => {
   expect(genDiff(filepath3, filepath4, 'plain')).toEqual(resultFlatPlain);
   expect(genDiff(filepath5, filepath6, 'plain')).toEqual(resultDeepPlain);
   expect(genDiff(filepath7, filepath8, 'plain')).toEqual(resultDeepPlain);
+});
+
+test('Shows difference between files "--format json"', () => {
+  expect(genDiff(filepath5, filepath6, 'json')).toEqual(resultJson);
+  expect(genDiff(filepath7, filepath8, 'json')).toEqual(resultJson);
 });
 
 test('Shows error', () => {

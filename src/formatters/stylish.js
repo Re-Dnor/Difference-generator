@@ -1,25 +1,28 @@
 import _ from 'lodash';
 
 const indent = (depth) => '   '.repeat(depth);
+
 const stringify = (value, depth) => {
   if (_.isPlainObject(value)) {
-    const data = Object.entries(value)
-      .map(([key, val]) => `${indent(depth + 1)}  ${key}: ${stringify(val, depth + 1)}`);
-    return ['{', ...data, `${indent(depth)}}`].join('\n');
+    const data = Object.entries(value);
+    const result = data.map(([key, val]) => `${indent(depth + 1)}  ${key}: ${stringify(val, depth + 1)}`);
+
+    return ['{', ...result, `${indent(depth)}}`].join('\n');
   }
+
   return value;
 };
 
 export default function stylish(tree) {
-  const iter = (currentValue, depth = 1) => {
-    const buildDiffString = (node) => {
+  const iter = (currentTree, depth = 1) => {
+    const result = (node) => {
       const { key, type } = node;
 
       if (type === 'nested') {
         const { children } = node;
         return `${indent(depth)}  ${key}: ${iter(children, depth + 1)}`;
       }
-      if (type === 'deleted') {
+      if (type === 'removed') {
         return `${indent(depth)}- ${key}: ${stringify(node.value, depth)}`;
       }
       if (type === 'added') {
@@ -36,7 +39,7 @@ export default function stylish(tree) {
       }
     };
 
-    const strings = currentValue.map(buildDiffString);
+    const strings = currentTree.map(result);
     return ['{', ...strings, `${indent(depth)}}`].join('\n');
   };
 

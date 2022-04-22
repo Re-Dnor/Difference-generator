@@ -12,7 +12,7 @@ export default function genDiff(filepath1, filepath2, format) {
   }
 
   // data comparison
-  const diffTree = buildTree(file1, file2);
-  const result = outputFormat(diffTree, format);
+  const tree = buildTree(file1, file2);
+  const result = outputFormat(tree, format);
   return result;
 }

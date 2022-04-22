@@ -15,7 +15,7 @@ export default function buildTree(file1, file2) {
 
     if (!_.has(file2, key)) {
       return {
-        type: 'deleted',
+        type: 'removed',
         key,
         value: file1[key],
       };
