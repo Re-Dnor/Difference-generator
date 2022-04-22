@@ -3,7 +3,8 @@ import _ from 'lodash';
 const indent = (depth) => '   '.repeat(depth);
 const stringify = (value, depth) => {
   if (_.isPlainObject(value)) {
-    const data = Object.entries(value).map(([key, val]) => `${indent(depth + 1)}  ${key}: ${stringify(val, depth + 1)}`);
+    const data = Object.entries(value)
+      .map(([key, val]) => `${indent(depth + 1)}  ${key}: ${stringify(val, depth + 1)}`);
     return ['{', ...data, `${indent(depth)}}`].join('\n');
   }
   return value;
