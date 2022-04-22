@@ -13,7 +13,7 @@ export default function buildTree(file1, file2) {
       };
     }
 
-    if (!_.has(file2, key) && _.has(file1, key)) {
+    if (!_.has(file2, key)) {
       return {
         type: 'deleted',
         key,
