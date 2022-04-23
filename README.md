@@ -14,7 +14,7 @@
 ## Инструкция к проекту
 
 Предварительно нужно склонировать репозиторий: <code> git clone https://github.com/Re-Dnor/frontend-project-lvl2.git</code><br>
-Затем происталлировать проект: <code>make install</code><br>
+Затем происталлировать проект: <code>make install</code> и установить пакет в систему с помощью <code>npm link</code><br>
 
 ## Команды для запуска вычислений
 
