@@ -19,8 +19,9 @@
 ## Команды для запуска вычислений
 
 Вывод справки: <code>gendiff -h</code><br>
-Для сравнения файлов нужно перейти в директорию **\_\_fixtures\_\_** <code>cd \_\_fixtures\_\_</code> и соответсвенно выбрать нужные файлы.<br>
-Можно выбрать формат вывода данных: <code>stylish, plain, json</code>. Stylish установлен по умолчанию.<br>
+Для сравнения файлов можно указывать как относительный так и абсолютный путь.<br>
+Для выбора формата вывода данных используется флаг <code>-f</code> или <code>--format</code>.
+Варианты форматов вывода данных: <code>stylish(default), plain, json</code>.
 Пример сравнения файлов:<br>
 <code>gendiff file1.json file2.json</code><br>
 <code>gendiff -f plain file1.json file2.json</code><br>
