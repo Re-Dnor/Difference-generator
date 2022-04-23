@@ -14,7 +14,7 @@
 ## Инструкция к проекту
 
 Предварительно нужно склонировать репозиторий: <code> git clone https://github.com/Re-Dnor/frontend-project-lvl2.git</code><br>
-Затем происталировать проект: <code>make install</code><br>
+Затем происталлировать проект: <code>make install</code><br>
 
 ## Команды для запуска вычислений
 
@@ -22,7 +22,7 @@
 Для сравнения файлов можно указывать как относительный так и абсолютный путь.<br>
 Для выбора формата вывода данных используется флаг <code>-f</code> или <code>--format</code>.<br>
 Варианты форматов вывода данных: <code>stylish(default), plain, json</code>.
-Пример сравнения файлов:<br>
+Примеры сравнения файлов:<br>
 <code>gendiff file1.json file2.json</code><br>
 <code>gendiff -f plain file1.json file2.json</code><br>
 <code>gendiff -f json file1.json file2.json</code><br>
