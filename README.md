@@ -19,15 +19,6 @@
 ## Команды для запуска вычислений
 
 Вывод справки: <code>gendiff -h</code><br>
-<code>Usage: gendiff [options] <filepath1> <filepath2>
-
-Compares two configuration files and shows a difference.
-
-Options:
--V, --version output the version number
--f, --format <type> output format (choices: "stylish", "plain", "json", default: "stylish")
--h, --help display help for command</code><br>
-
 Для сравнения файлов нужно перейти в директорию **fixtures** <code>cd **fixtures**</code> и соответсвенно выбрать нужные файлы.<br>
 Можно выбрать формат вывода данных: <code>stylish, plain, json</code><br>
 Пример сравнения файлов:<br>
