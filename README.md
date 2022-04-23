@@ -20,7 +20,7 @@
 
 Вывод справки: <code>gendiff -h</code><br>
 Для сравнения файлов можно указывать как относительный так и абсолютный путь.<br>
-Для выбора формата вывода данных используется флаг <code>-f</code> или <code>--format</code>.
+Для выбора формата вывода данных используется флаг <code>-f</code> или <code>--format</code>.<br>
 Варианты форматов вывода данных: <code>stylish(default), plain, json</code>.
 Пример сравнения файлов:<br>
 <code>gendiff file1.json file2.json</code><br>
