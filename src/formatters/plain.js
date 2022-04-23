@@ -30,9 +30,8 @@ export default function plain(tree) {
       const { value1: firstObjValue, value2: secondObjValue } = node;
       return `Property '${newHigthway}' was updated. From ${stringify(firstObjValue)} to ${stringify(secondObjValue)}`;
     }
-    if (type === 'unchanged') {
-      return [];
-    }
+
+    return [];
   };
 
   const lines = tree.flatMap((child) => iter(child)).join('\n');

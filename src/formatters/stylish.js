@@ -35,9 +35,8 @@ export default function stylish(tree) {
           `${indent(depth)}+ ${key}: ${stringify(node.value2, depth)}`,
         ].join('\n');
       }
-      if (type === 'unchanged') {
-        return `${indent(depth)}  ${key}: ${stringify(node.value, depth)}`;
-      }
+
+      return `${indent(depth)}  ${key}: ${stringify(node.value, depth)}`;
     };
 
     const strings = currentTree.map(result);
