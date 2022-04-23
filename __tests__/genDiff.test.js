@@ -13,18 +13,24 @@ const file1Json = getFixturePath('file1.json');
 const file2Json = getFixturePath('file2.json');
 const file1Yaml = getFixturePath('file1.yaml');
 const file2Yml = getFixturePath('file2.yml');
+const FileBroken = getFixturePath('file2.txt');
+const Error = 'Error: data format is not supported! Please use json, yml or yaml format.';
 
-test('genDiff stylish', () => {
+test('Stylish format, function gendiff', () => {
   expect(gendiff(file1Json, file2Json)).toBe(expectedResultStylish);
   expect(gendiff(file1Yaml, file2Yml)).toBe(expectedResultStylish);
 });
 
-test('genDiff plain', () => {
+test('Plain format, function gendiff', () => {
   expect(gendiff(file1Json, file2Json, 'plain')).toBe(expectedResultPlain);
   expect(gendiff(file1Yaml, file2Yml, 'plain')).toBe(expectedResultPlain);
 });
 
-test('genDiff json', () => {
+test('JSON format, function gendiff', () => {
   expect(gendiff(file1Json, file2Json, 'json')).toBe(expectedResultJSON);
   expect(gendiff(file1Yaml, file2Yml, 'json')).toBe(expectedResultJSON);
+});
+
+test('Broken format, function gendiff', () => {
+  expect(gendiff(file1Json, FileBroken)).toBe(Error);
 });
