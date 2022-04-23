@@ -20,7 +20,7 @@
 
 Вывод справки: <code>gendiff -h</code><br>
 Для сравнения файлов нужно перейти в директорию **\_\_fixtures\_\_** <code>cd \_\_fixtures\_\_</code> и соответсвенно выбрать нужные файлы.<br>
-Можно выбрать формат вывода данных: <code>stylish, plain, json</code><br>
+Можно выбрать формат вывода данных: <code>stylish, plain, json</code>. Stylish установлен по умолчанию.<br>
 Пример сравнения файлов:<br>
 <code>gendiff file1.json file2.json</code><br>
 <code>gendiff -f plain file1.json file2.json</code><br>
