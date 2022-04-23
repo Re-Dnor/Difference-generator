@@ -1,6 +1,36 @@
-### Tests:
+# Вычислитель отличий
 
-[![Actions Status](https://github.com/Re-Dnor/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/Re-Dnor/frontend-project-lvl2/actions)<br>
-[![Maintainability](https://api.codeclimate.com/v1/badges/71377ee8a77f2dd03481/maintainability)](https://codeclimate.com/github/Re-Dnor/frontend-project-lvl2/maintainability)<br>
-[![Github Actions](https://github.com/Re-Dnor/frontend-project-lvl2/actions/workflows/lint-check.yml/badge.svg?branch=main)](https://github.com/Re-Dnor/frontend-project-lvl2/actions/workflows/lint-check.yml)<br>
-[![Test Coverage](https://api.codeclimate.com/v1/badges/71377ee8a77f2dd03481/test_coverage)](https://codeclimate.com/github/Re-Dnor/frontend-project-lvl2/test_coverage)<br>
+[![Actions Status](https://github.com/Re-Dnor/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/Re-Dnor/frontend-project-lvl2/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/71377ee8a77f2dd03481/maintainability)](https://codeclimate.com/github/Re-Dnor/frontend-project-lvl2/maintainability)
+[![Github Actions](https://github.com/Re-Dnor/frontend-project-lvl2/actions/workflows/lint-check.yml/badge.svg?branch=main)](https://github.com/Re-Dnor/frontend-project-lvl2/actions/workflows/lint-check.yml)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/71377ee8a77f2dd03481/test_coverage)](https://codeclimate.com/github/Re-Dnor/frontend-project-lvl2/test_coverage)
+
+Вычислитель отличий – программа, определяющая разницу между двумя структурами данных. Это популярная задача, для решения которой существует множество онлайн сервисов. Подобный механизм используется при выводе тестов или при автоматическом отслеживании изменении в конфигурационных файлах.
+Возможности утилиты:
+
+- Поддержка разных входных форматов: yaml, json
+- Генерация отчета в виде plain text, stylish и json
+
+## Инструкция к проекту
+
+Предварительно нужно склонировать репозиторий: <code> git clone https://github.com/Re-Dnor/frontend-project-lvl2.git</code><br>
+Затем происталировать проект: <code>make install</code><br>
+
+## Команды для запуска вычислений
+
+Вывод справки: <code>gendiff -h</code><br>
+<code>Usage: gendiff [options] <filepath1> <filepath2>
+
+Compares two configuration files and shows a difference.
+
+Options:
+-V, --version output the version number
+-f, --format <type> output format (choices: "stylish", "plain", "json", default: "stylish")
+-h, --help display help for command</code><br>
+
+Для сравнения файлов нужно перейти в директорию **fixtures** <code>cd **fixtures**</code> и соответсвенно выбрать нужные файлы.<br>
+Можно выбрать формат вывода данных: <code>stylish, plain, json</code><br>
+Пример сравнения файлов:<br>
+<code>gendiff file1.json file2.json</code><br>
+<code>gendiff -f plain file1.json file2.json</code><br>
+<code>gendiff -f json file1.json file2.json</code><br>
