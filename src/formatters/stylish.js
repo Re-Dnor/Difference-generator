@@ -1,13 +1,14 @@
 import _ from 'lodash';
 
-const indent = (depth) => '   '.repeat(depth);
+const tagSize = 4;
+const indent = (depth, spacesCount = 2) => ' '.repeat(depth * tagSize - spacesCount);
 
 const stringify = (value, depth) => {
   if (_.isPlainObject(value)) {
     const data = Object.entries(value);
     const result = data.map(([key, val]) => `${indent(depth + 1)}  ${key}: ${stringify(val, depth + 1)}`);
 
-    return ['{', ...result, `${indent(depth)}}`].join('\n');
+    return ['{', ...result, `${indent(depth, 0)}}`].join('\n');
   }
 
   return value;
@@ -40,7 +41,7 @@ export default function stylish(tree) {
     };
 
     const strings = currentTree.map(result);
-    return ['{', ...strings, `${indent(depth)}}`].join('\n');
+    return ['{', ...strings, `${indent(depth, tagSize)}}`].join('\n');
   };
 
   return iter(tree, 1);

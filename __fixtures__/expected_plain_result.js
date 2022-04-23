@@ -1,4 +1,4 @@
-const resultDeepPlain = `Property 'common.follow' was added with value: false
+const resultPlain = `Property 'common.follow' was added with value: false
 Property 'common.setting2' was removed
 Property 'common.setting3' was updated. From true to null
 Property 'common.setting4' was added with value: 'blah blah'
@@ -10,4 +10,4 @@ Property 'group1.nest' was updated. From [complex value] to 'str'
 Property 'group2' was removed
 Property 'group3' was added with value: [complex value]`;
 
-export default resultDeepPlain;
+export default resultPlain;
