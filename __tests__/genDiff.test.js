@@ -1,37 +1,30 @@
-import * as fs from 'fs';
 import { fileURLToPath } from 'url';
-import path, { dirname } from 'path';
-import genDiff from '../src/index.js';
-import resultJson from '../__fixtures__/expected_json_result.js';
-import resultPlain from '../__fixtures__/expected_plain_result.js';
-import resultStylish from '../__fixtures__/expected_stylish_result.js';
+import path from 'path';
+import gendiff from '../src/index.js';
+import expectedResultStylish from '../__fixtures__/expected_stylish_result.js';
+import expectedResultPlain from '../__fixtures__/expected_plain_result.js';
+import expectedResultJSON from '../__fixtures__/expected_json_result.js';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-const getFixturePath = (filename) => {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = dirname(__filename);
-  return path.join(__dirname, '..', '__fixtures__', filename);
-};
+const file1Json = getFixturePath('file1.json');
+const file2Json = getFixturePath('file2.json');
+const file1Yaml = getFixturePath('file1.yaml');
+const file2Yml = getFixturePath('file2.yml');
 
-const fileExtensions = ['json', 'yaml'];
+test('genDiff stylish', () => {
+  expect(gendiff(file1Json, file2Json, 'stylish')).toBe(expectedResultStylish);
+  expect(gendiff(file1Yaml, file2Yml, 'stylish')).toBe(expectedResultStylish);
+});
 
-const formatTypes = ['stylish', 'json', 'plain'];
+test('genDiff plain', () => {
+  expect(gendiff(file1Json, file2Json, 'plain')).toBe(expectedResultPlain);
+  expect(gendiff(file1Yaml, file2Yml, 'plain')).toBe(expectedResultPlain);
+});
 
-describe.each(formatTypes)('compare', (format) => {
-  test.each(fileExtensions)(`${format} %p`, (extension) => {
-    const file1 = getFixturePath(`file1.${extension}`);
-    const file2 = getFixturePath(`file2.${extension}`);
-    let expectedResult;
-    if (format === 'stylish') {
-      expectedResult = resultStylish;
-    } else if (format === 'json') {
-      expectedResult = resultJson;
-    } else if (format === 'plain') {
-      expectedResult = resultPlain;
-    }
-
-
-    const compare = genDiff(file1, file2, format);
-    expect(compare).toBe(expectedResult);
-  });
+test('genDiff json', () => {
+  expect(gendiff(file1Json, file2Json, 'json')).toBe(expectedResultJSON);
+  expect(gendiff(file1Yaml, file2Yml, 'json')).toBe(expectedResultJSON);
 });
