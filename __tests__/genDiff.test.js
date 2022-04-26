@@ -19,7 +19,6 @@ const formats = ['stylish', 'plain', 'json'];
 const extensions = ['json', 'yaml', 'yml'];
 const fictitiousExt = ['xls', 'doc', 'pdf'];
 
-
 describe.each(formats)('compare', (format) => {
   test.each(extensions)(`format: ${format}`, (extension) => {
     const file1 = getFixturePath(`file1.${extension}`);
