@@ -27,11 +27,7 @@ export default function buildTree(file1, file2) {
       return getChanged(key, file1[key], file2[key]);
     }
 
-    if (file1[key] === file2[key]) {
-      return getUnchanged(key, file1[key]);
-    }
-
-    return null;
+    return getUnchanged(key, file1[key]);
   };
 
   return keys.map(getDiff);
